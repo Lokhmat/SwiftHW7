@@ -162,6 +162,7 @@ class MapController: UIViewController, UITextFieldDelegate {
         clearButton.isEnabled = false
         goButton.setTitleColor(.gray, for: .disabled)
         goButton.isEnabled = false
+        isActive = false
     }
     
     @objc func goButtonWasPressed(){
