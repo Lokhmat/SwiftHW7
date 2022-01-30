@@ -15,6 +15,8 @@ class MapController: UIViewController, UITextFieldDelegate {
     
     let textStack = UIStackView()
     
+    let searchManager = YMKSearch.sharedInstance().createSearchManager(with: .combined)
+    
     let startLocation: UITextField = {
         let control = UITextField()
         control.backgroundColor = UIColor.lightGray
@@ -165,8 +167,16 @@ class MapController: UIViewController, UITextFieldDelegate {
         isActive = false
     }
     
+    
+    
     @objc func goButtonWasPressed(){
-        
+        guard
+            let first = startLocation.text,
+            let second = stopLocation.text,
+            first != second
+        else {
+            return
+        }
     }
     
     @objc func changedText(){
