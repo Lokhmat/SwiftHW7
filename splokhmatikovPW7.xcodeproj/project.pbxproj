@@ -12,6 +12,8 @@
 		F680586527A6B7B700130F38 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F680586427A6B7B700130F38 /* SceneDelegate.swift */; };
 		F680586727A6B7B700130F38 /* MapController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F680586627A6B7B700130F38 /* MapController.swift */; };
 		F680586C27A6B7BA00130F38 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F680586B27A6B7BA00130F38 /* Assets.xcassets */; };
+		F680587D27A6F31B00130F38 /* ActionButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = F680587C27A6F31B00130F38 /* ActionButton.swift */; };
+		F680587F27A7125600130F38 /* UIViewPin.swift in Sources */ = {isa = PBXBuildFile; fileRef = F680587E27A7125600130F38 /* UIViewPin.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,7 +26,8 @@
 		F680586627A6B7B700130F38 /* MapController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapController.swift; sourceTree = "<group>"; };
 		F680586B27A6B7BA00130F38 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F680587027A6B7BA00130F38 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		F680587B27A6F19800130F38 /* UIViewPin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewPin.swift; sourceTree = "<group>"; };
+		F680587C27A6F31B00130F38 /* ActionButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActionButton.swift; sourceTree = "<group>"; };
+		F680587E27A7125600130F38 /* UIViewPin.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UIViewPin.swift; path = ../../../../.Trash/UIViewPin.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -77,7 +80,7 @@
 		F680586127A6B7B700130F38 /* splokhmatikovPW7 */ = {
 			isa = PBXGroup;
 			children = (
-				F680587827A6F15800130F38 /* Utils */,
+				F680587E27A7125600130F38 /* UIViewPin.swift */,
 				F680587727A6BB2100130F38 /* Views */,
 				F680587627A6B95600130F38 /* Controllers */,
 				F680586227A6B7B700130F38 /* AppDelegate.swift */,
@@ -99,16 +102,9 @@
 		F680587727A6BB2100130F38 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				F680587C27A6F31B00130F38 /* ActionButton.swift */,
 			);
 			path = Views;
-			sourceTree = "<group>";
-		};
-		F680587827A6F15800130F38 /* Utils */ = {
-			isa = PBXGroup;
-			children = (
-				F680587B27A6F19800130F38 /* UIViewPin.swift */,
-			);
-			path = Utils;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -224,9 +220,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F680587F27A7125600130F38 /* UIViewPin.swift in Sources */,
 				F680586727A6B7B700130F38 /* MapController.swift in Sources */,
 				F680586327A6B7B700130F38 /* AppDelegate.swift in Sources */,
 				F680586527A6B7B700130F38 /* SceneDelegate.swift in Sources */,
+				F680587D27A6F31B00130F38 /* ActionButton.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -357,12 +355,14 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = MJT89725KT;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = splokhmatikovPW7/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -384,12 +384,14 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = MJT89725KT;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = splokhmatikovPW7/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
