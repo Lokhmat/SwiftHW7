@@ -11,6 +11,8 @@ import YandexMapsMobile
 class MapController: UIViewController, UITextFieldDelegate {
     let buttonsStackView = UIStackView()
     
+    var isActive = false
+    
     let textStack = UIStackView()
     
     let startLocation: UITextField = {
@@ -51,6 +53,9 @@ class MapController: UIViewController, UITextFieldDelegate {
         return control
     }()
     
+    let goButton = ActionButton(color: #colorLiteral(red: 241.0/255.0, green: 1,blue: 191.0/255.0, alpha: 1), text: "Go")
+    let clearButton = ActionButton(color: #colorLiteral(red: 0.5582880378, green: 1, blue: 1, alpha: 1), text: "Clear")
+    
     private let mapView: YMKMapView = {
         let mapView = YMKMapView()
         mapView.layer.masksToBounds = true
@@ -82,6 +87,8 @@ class MapController: UIViewController, UITextFieldDelegate {
             textField.delegate = self
             textStack.addArrangedSubview(textField)
         }
+        startLocation.addTarget(self, action: #selector(changedText), for: .allEditingEvents)
+        stopLocation.addTarget(self, action: #selector(changedText), for: .allEditingEvents)
         mapView.translatesAutoresizingMaskIntoConstraints = false
         mapView.trailingAnchor.constraint(
             equalTo: view.trailingAnchor,
@@ -103,14 +110,17 @@ class MapController: UIViewController, UITextFieldDelegate {
     }
     
     func configureButtons(){
-        let goButton = ActionButton(color: #colorLiteral(red: 241.0/255.0, green: 1,blue: 191.0/255.0, alpha: 1), text: "Go")
-        let clearButton = ActionButton(color: #colorLiteral(red: 0.5582880378, green: 1, blue: 1, alpha: 1), text: "Clear")
+        goButton.isEnabled = isActive
+        clearButton.isEnabled = isActive
+        clearButton.setTitleColor(.gray, for: .disabled)
+        goButton.setTitleColor(.gray, for: .disabled)
         buttonsStackView.distribution = .fillEqually
         buttonsStackView.spacing = 10
         buttonsStackView.addArrangedSubview(goButton)
         buttonsStackView.addArrangedSubview(clearButton)
         goButton.translatesAutoresizingMaskIntoConstraints = false
         clearButton.translatesAutoresizingMaskIntoConstraints = false
+        clearButton.addTarget(self, action: #selector(clearButtonWasPressed), for: .touchDown)
         view.addSubview(buttonsStackView)
         buttonsStackView.translatesAutoresizingMaskIntoConstraints = false
         buttonsStackView.trailingAnchor.constraint(
@@ -139,6 +149,38 @@ class MapController: UIViewController, UITextFieldDelegate {
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool{
         textField.resignFirstResponder()
+        if isActive {
+            goButtonWasPressed()
+        }
         return true
+    }
+    
+    @objc func clearButtonWasPressed(){
+        startLocation.text = ""
+        stopLocation.text = ""
+        clearButton.setTitleColor(.gray, for: .disabled)
+        clearButton.isEnabled = false
+        goButton.setTitleColor(.gray, for: .disabled)
+        goButton.isEnabled = false
+    }
+    
+    @objc func goButtonWasPressed(){
+        
+    }
+    
+    @objc func changedText(){
+        if startLocation.text == "" || stopLocation.text == ""{
+            isActive = false
+            clearButton.setTitleColor(.gray, for: .disabled)
+            clearButton.isEnabled = false
+            goButton.setTitleColor(.gray, for: .disabled)
+            goButton.isEnabled = false
+        } else {
+            isActive = true
+            clearButton.setTitleColor(.black, for: .normal)
+            clearButton.isEnabled = true
+            goButton.setTitleColor(.black, for: .normal)
+            goButton.isEnabled = true
+        }
     }
 }
